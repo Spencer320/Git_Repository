@@ -25,8 +25,8 @@ public class BookShelf {
         ArrayList<Book> removeBooks = new ArrayList<>();
 
         for (Book book : books) {
-            if (book.getScore()<num){
-            removeBooks.add(book);
+            if (book.getScore() < num) {
+                removeBooks.add(book);
             }
         }
 
