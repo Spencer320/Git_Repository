@@ -49,13 +49,12 @@ public class Book {
         this.magic += magic;
     }
 
-    public String subMagic(int a, int b) {
+    public void subMagic(int a, int b) {
         if (a <= b) {
             magic = magic.substring(a, Integer.min(b + 1, magic.length()));
         } else {
             magic = "";
         }
-        return magic;
     }
 
     public boolean contains(String s) {
