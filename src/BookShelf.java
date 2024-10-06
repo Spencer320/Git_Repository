@@ -16,7 +16,7 @@ public class BookShelf {
     public BookShelf cloneBookshelf() {
         BookShelf clone = new BookShelf(id);
         for (Book book : books) {
-            clone.addBook(book);
+            clone.addBook(book.clone());
         }
         return clone;
     }
