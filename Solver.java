@@ -70,7 +70,7 @@ public class Solver {
     private void cloneBookShelf() {
         int id1 = scanner.nextInt();
         int id2 = scanner.nextInt();
-        bookShelves.put(id2,bookShelves.get(id1).cloneBookshelf());//深克隆
+        bookShelves.put(id2,bookShelves.get(id1).cloneBookshelf());
     }
 
     private void filter() {
