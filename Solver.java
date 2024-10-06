@@ -40,7 +40,7 @@ public class Solver {
     }
 
     private void addBook() {
-        String name = scanner.nextLine();
+        String name = scanner.next();
         String magic = scanner.next();
         Book book = new Book(name, magic);
         books.add(book);
@@ -50,7 +50,7 @@ public class Solver {
         int id = scanner.nextInt();
         int num = scanner.nextInt();
         bookShelves.put(id, new BookShelf(id));
-        for (int i = 0; i <= num; i++) {
+        for (int i = 0; i < num; i++) {
             String name = scanner.next();
             Book book = getBook(name);
             books.remove(book);
@@ -68,10 +68,9 @@ public class Solver {
     }
 
     private void cloneBookShelf() {
-         Scanner scanner = new Scanner(System.in);
         int id1 = scanner.nextInt();
         int id2 = scanner.nextInt();
-        bookShelves.put(id2, bookShelves.get(id1));
+        bookShelves.put(id2,bookShelves.get(id1).cloneBookshelf());//深克隆
     }
 
     private void filter() {

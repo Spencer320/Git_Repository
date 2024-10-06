@@ -24,18 +24,23 @@ public class BookShelf {
 
     public void filter(int num) {
         ArrayList<Book> removeBooks = new ArrayList<>();
-
+        //书被删去的条件是分数不足，存入removeBooks后统一删去
         for (Book book : books) {
-            books.remove(book);
+            if (book.getScore()<num){
+            removeBooks.add(book);
+            }
         }
 
+        books.removeAll(removeBooks);
     }
 
     public void join(BookShelf bookShelf) {
         for (Book book : bookShelf.books) {
+            //遍历将加入书的数组，排除书籍重复
             boolean hasBook = false;
             for (Book book1 : books) {
-                if (book1.equals(book)) {
+                //使用==判断是否为同一对象
+                if (book1 == book) {
                     hasBook = true;
                     break;
                 }
@@ -54,7 +59,7 @@ public class BookShelf {
 
     public void subMagic(int a, int b) {
         for (Book book : books) {
-            book.subMagic(a, b + 1);
+            book.subMagic(a, b);
         }
     }
 

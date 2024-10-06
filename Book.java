@@ -23,7 +23,7 @@ public class Book {
         int res = 0;
         for (int l = 0; l < magic.length(); l++) {
             for (int r = l + 1; r <= magic.length(); r++) {
-                String s = magic.substring(l + 1, r);
+                String s = magic.substring(l, r);
                 int len = s.length();
                 int num = 0;
                 int alph = 0;
@@ -49,12 +49,13 @@ public class Book {
         this.magic += magic;
     }
 
-    public void subMagic(int a, int b) {
+    public String subMagic(int a, int b) {
         if (a <= b) {
-            magic = magic.substring(a, Integer.max(b + 1, magic.length()));
+            magic = magic.substring(a, Integer.min(b + 1, magic.length()));
         } else {
             magic = "";
         }
+        return magic;
     }
 
     public boolean contains(String s) {
